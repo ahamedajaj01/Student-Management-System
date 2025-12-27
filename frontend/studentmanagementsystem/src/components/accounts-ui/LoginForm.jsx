@@ -7,6 +7,7 @@ function LoginForm({loading, error, onSubmit}) {
     email: "",
     password: "",
   });
+const [showPassword, setShowPassword] = useState(false);
 
    const handleChange = (e) => {
     const { name, value } = e.target;
@@ -84,10 +85,18 @@ Student Management System
                 name="password"
                     value={formData.password}
                     onChange={handleChange}
-                  type="password" 
+      type={showPassword ? "text" : "password"}
                   placeholder="••••••••"
                   className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all pl-11"
                 />
+                   <button
+      type="button"
+      onClick={() => setShowPassword((prev) => !prev)}
+      className="absolute inset-y-0 right-4 flex items-center text-slate-500 hover:text-slate-700"
+      aria-label={showPassword ? "Hide password" : "Show password"}
+    >
+      {showPassword ? "🙈" : "👁️"}
+    </button>
                 <div className="absolute left-4 top-3.5 text-slate-400">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />

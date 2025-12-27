@@ -10,6 +10,7 @@ function RegisterForm({ loading, error, onSubmit }) {
     password: "",
     con_password: "",
   });
+const [showPassword, setShowPassword] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -125,14 +126,24 @@ function RegisterForm({ loading, error, onSubmit }) {
                   <label className="block text-sm font-semibold text-slate-700 mb-2">
                     Password
                   </label>
+                  <div className="relative">
                   <input
                     name="password"
                     value={formData.password}
                     onChange={handleChange}
-                    type="password"
+      type={showPassword ? "text" : "password"}
                     placeholder="••••••••"
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                   />
+                  <button
+      type="button"
+      onClick={() => setShowPassword((prev) => !prev)}
+      className="absolute inset-y-0 right-4 flex items-center text-slate-500 hover:text-slate-700"
+      aria-label={showPassword ? "Hide password" : "Show password"}
+    >
+      {showPassword ? "🙈" : "👁️"}
+    </button>
+  </div>
                 </div>
 
                 {/* Confirm Password */}
@@ -144,7 +155,7 @@ function RegisterForm({ loading, error, onSubmit }) {
                     name="con_password"
                     value={formData.con_password}
                     onChange={handleChange}
-                    type="password"
+      type={showPassword ? "text" : "password"}
                     placeholder="••••••••"
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                   />
