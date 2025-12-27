@@ -40,7 +40,9 @@ POST /api/auth/register/
 
 **Notes**
 - Role can be `STUDENT` or `MENTOR`
-- Students get a mentor automatically (if mentors exist)
+- Students are automatically assigned a mentor at registration:
+. if only one mentor exists, all students are assigned to that mentor
+. if multiple mentors exist, one mentor is assigned randomly
 
 ---
 
