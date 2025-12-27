@@ -4,6 +4,8 @@ A modern, full-stack academic management portal built to streamline the connecti
 
 ---
 
+LIVE DEMO - https://student-management-system-demo.vercel.app
+
 ## 🌟 Key Highlights
 
 *   **Smart Onboarding:** Automatic mentor assignment upon registration.
