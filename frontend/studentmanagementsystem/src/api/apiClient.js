@@ -6,7 +6,7 @@
 // - Handles 401 responses and token refresh automatically
 // - Centralized error handling (can be added later)
 // - Easier to maintain and update API interaction logic
-// - Easy to switch backend URLs or add features like logging
+// - Easy to switch backend URLs or add features
 
 import axios from "axios";
 import config from "../config/config.js"; // contains base URL
